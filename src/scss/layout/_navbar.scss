@@ -1,0 +1,93 @@
+.main-navbar {
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 80px;
+  justify-content: space-between;
+  padding: 0 40px;
+  box-sizing: border-box;
+  color: $c-text-dark;
+  text-transform: uppercase;
+
+  &__logo-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__logo {
+    height: 21px;
+  }
+
+  &__lang-wrapper {
+    display: flex;
+    height: 100%;
+    justify-content: space-around;
+  }
+
+  &__menu-wrapper {
+    display: flex;
+    height: 100%;
+    justify-content: space-around;
+  }
+
+  &__options {
+    max-width: 215px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.lang {
+  align-self: center;
+
+  &__dropdown {
+    display: none;
+  }
+}
+
+.menu-btn {
+  align-self: center;
+  display: flex;
+  text-decoration: none;
+
+  &__text {
+    align-self: center;
+  }
+
+  &__icon-box {
+    align-self: center;
+  }
+}
+
+.menu-icon {
+  display: block;
+  position: relative;
+  width: 24px;
+  height: 16px;
+  padding-left: 15px;
+
+  &__item {
+    display: block;
+    height: 18px;
+    width: 2px;
+    background-color: $c-text-pink;
+    position: absolute;
+    transform: rotate(30deg);
+  }
+}
+
+.menu-icon__item:nth-child(1) {
+  transform: translate3d(0, 0, 0) rotate(15deg);
+}
+
+.menu-icon__item:nth-child(2) {
+  transform: translate3d(5px, 0, 0) rotate(15deg);
+}
+
+.menu-icon__item:nth-child(3) {
+  transform: translate3d(10px, 0, 0) rotate(15deg);
+}
