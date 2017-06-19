@@ -81,7 +81,7 @@ gulp.task('scss', ['scss-lint'], () => {
 /* --- images --- */
 gulp.task('images', () => {
   return gulp.src(paths.img.src)
-  .pipe(imagemin())
+  // .pipe(imagemin())
   .pipe(gulp.dest(paths.img.dist))
 })
 
@@ -116,9 +116,9 @@ function bundle () {
   .on('error', gutil.log.bind(gutil, 'Browserify Error'))
   .pipe(source('bundle.js'))
   .pipe(buffer())
-  .pipe(sourcemaps.init({loadMaps: true}))
-  .pipe(uglify())
-  .pipe(sourcemaps.write('.'))
+  // .pipe(sourcemaps.init({loadMaps: true}))
+  // .pipe(uglify())
+  // .pipe(sourcemaps.write('.'))
   .pipe(gulp.dest(paths.js.dist))
 }
 
