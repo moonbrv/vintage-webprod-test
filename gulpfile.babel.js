@@ -15,6 +15,7 @@ import gutil from 'gulp-util'
 import uglify from 'gulp-uglify'
 import eslint from 'gulp-eslint'
 import stylelint from 'gulp-stylelint'
+import injectSVG from 'gulp-inject-svg'
 
 const browserSync = bs.create()
 
@@ -88,6 +89,7 @@ gulp.task('images', () => {
 /* --- html --- */
 gulp.task('html', () => {
   return gulp.src(paths.html.src)
+  .pipe(injectSVG())
   .pipe(gulp.dest(paths.html.dist))
 })
 

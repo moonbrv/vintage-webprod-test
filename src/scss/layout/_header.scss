@@ -26,7 +26,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
+  width: 100%;
   z-index: -1;
 }
 
@@ -34,6 +34,7 @@
   width: 60px;
   margin: 0 auto;
   display: block;
+  cursor: pointer;
 }
 
 .header-showreel {
@@ -53,5 +54,12 @@
 #scrolldown_icon {
   .st0 {
     stroke: $c-white;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .video-background {
+    height: 100%;
+    width: auto;
   }
 }
