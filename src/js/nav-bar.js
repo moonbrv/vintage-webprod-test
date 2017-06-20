@@ -26,6 +26,7 @@ export default class NavBarAnimation {
     const titleLines = Array.from(document.querySelectorAll('.main-title__line'))
     const playIconLabel = document.querySelector('.header-showreel')
     const scrollIcon = document.querySelector('.header-scroll-icon')
+    const decorLine = document.querySelector('.decor-line')
 
     this.navBarAnimation
     .from(logoIcon[0], time, {opacity: 0, y: '+=20'}, 'first')
@@ -35,10 +36,11 @@ export default class NavBarAnimation {
     .from(lang, time, {opacity: 0, y: '+=20'}, 'second')
     .from(menuIconItems[2], time, {opacity: 0, y: '+=20'}, 'first')
     .staggerFrom(straggerPartOfMenuIcon, (time / 2), {opacity: 0, x: '+=5'}, (time / 2), 'second')
+    .from(decorLine, time, {opacity: 0, y: '+=20'}, 'third')
     .staggerFrom(titleLines, 0.5, {opacity: 0, y: '+=20'}, 0.3, 'third')
     .from(playIcon, 0.7, {rotation: 180, scale: 0.5, opacity: 0}, 'fourth')
     .from(playIconLabel, (time / 2), {opacity: 0, y: '-=20'}, 'fifth')
-    .from(scrollIcon, (time / 2), {opacity: 0}, 'fifth')
+    .from(scrollIcon, time, {opacity: 0}, 'fifth')
     // this.navBarAnimation.pause()
     /* End onSiteLoad Over Effect */
   }

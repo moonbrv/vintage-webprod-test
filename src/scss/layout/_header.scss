@@ -15,7 +15,7 @@
   margin: 0 auto;
   text-align: center;
   max-width: 750px;
-  padding: 155px 0 33px;
+  padding: 0 0 33px;
 
   &__line {
     display: block;
@@ -51,10 +51,11 @@
   margin: 0 auto;
 }
 
-#scrolldown_icon {
-  .st0 {
-    stroke: $c-white;
-  }
+.decor-line {
+  width: 2px;
+  height: 28px;
+  background-color: $c-white;
+  margin: 97px auto 30px;
 }
 
 @media screen and (max-width: 1199px) {
