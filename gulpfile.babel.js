@@ -15,6 +15,7 @@ import gutil from 'gulp-util'
 import uglify from 'gulp-uglify'
 import eslint from 'gulp-eslint'
 import stylelint from 'gulp-stylelint'
+import injectSVG from 'gulp-inject-svg'
 
 const browserSync = bs.create()
 
@@ -36,8 +37,28 @@ const paths = {
   html: {
     src: path.join(__dirname, 'src', 'index.html'),
     dist: path.join(__dirname, 'dist')
+  },
+  fonts: {
+    src: path.join(__dirname, 'src', 'font', '*'),
+    dist: path.join(__dirname, 'dist', 'font')
+  },
+  video: {
+    src: path.join(__dirname, 'src', 'video', '*'),
+    dist: path.join(__dirname, 'dist', 'video')
   }
 }
+
+/* --- fonts --- */
+gulp.task('fonts', () => {
+  return gulp.src(paths.fonts.src)
+  .pipe(gulp.dest(paths.fonts.dist))
+})
+
+/* --- video --- */
+gulp.task('video', () => {
+  return gulp.src(paths.video.src)
+  .pipe(gulp.dest(paths.video.dist))
+})
 
 /* --- stylesheets --- */
 gulp.task('scss-lint', () => {
@@ -61,13 +82,13 @@ gulp.task('scss', ['scss-lint'], () => {
 /* --- images --- */
 gulp.task('images', () => {
   return gulp.src(paths.img.src)
-  .pipe(imagemin())
   .pipe(gulp.dest(paths.img.dist))
 })
 
 /* --- html --- */
 gulp.task('html', () => {
   return gulp.src(paths.html.src)
+  .pipe(injectSVG())
   .pipe(gulp.dest(paths.html.dist))
 })
 
@@ -112,7 +133,7 @@ gulp.task('javascript-watch', ['javascript'], (done) => {
 })
 
 /* --- starting development server --- */
-gulp.task('serve', ['html', 'scss', 'images', 'javascript-watch'], () => {
+gulp.task('serve', ['html', 'fonts', 'video', 'scss', 'images', 'javascript-watch'], () => {
   browserSync.init([paths.scss.dist, paths.img.dist, paths.js.dist, paths.html.dist], {
     reloadDelay: 500,
     server: {
