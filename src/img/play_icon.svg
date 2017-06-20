@@ -4,8 +4,8 @@
 <svg version="1.1" id="play_icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 62 78" style="enable-background:new 0 0 62 78;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#FFFFFF;}
-	.st1{fill:#A7627F;}
+	#play_icon .st0{fill:#FFFFFF;}
+	#play_icon .st1{fill:#A7627F;}
 </style>
 <g id="base">
 	<path class="st0" d="M62,62H0V0h62V62z M2,60h58V2H2V60z"/>

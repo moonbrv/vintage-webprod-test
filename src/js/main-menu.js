@@ -18,11 +18,10 @@ export default class MainMenu {
     this.mainMenuAnimation
     .to(this.lang, 0.3, {opacity: 0, x: '-=20'}, 'first')
     .to(this.langMenu, 0, {opacity: 1, visibility: 'visible'}, 'second')
-    .to(this.langWrapper, 0, {margin: 0}, 'second')
+    .to(this.langWrapper, 0, {margin: 0, position: 'absolute', left: '50%', x: '-50%'}, 'second')
     .to(this.lang, 0, {className: '+=lang_screen'}, 'second')
     .to(this.lang, 0.3, {opacity: 1, x: '+=20'}, 'second')
     .from(this.navScreen, 0.5, {x: '+=103%'}, 'second')
-    .to(this.navBar, 0.5, {position: 'fixed'}, 'third')
     .staggerFrom(this.menuItems, 0.4, {opacity: 0, y: '-=30'}, 0.2, 'third')
     .from(this.socialIcons, 0.3, {opacity: 0, x: '-=20'}, 'fourth')
     this.mainMenuAnimation.pause()

@@ -82,7 +82,14 @@ gulp.task('scss', ['scss-lint'], () => {
 /* --- images --- */
 gulp.task('images', () => {
   return gulp.src(paths.img.src)
-  // .pipe(imagemin())
+  // .pipe(imagemin([
+  //   imagemin.svgo({plugins: [
+  //     {convertShapeToPath: false},
+  //     {mergePaths: false},
+  //     {collapseGroups: false},
+  //     {convertStyleToAttrs: true}
+  //   ]})
+  // ]))
   .pipe(gulp.dest(paths.img.dist))
 })
 

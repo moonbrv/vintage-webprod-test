@@ -5,17 +5,17 @@ export default class NavBarAnimation {
     this.logo = document.querySelector('.main-navbar__logo')
     this.titleLineClass = 'main-title__line'
 
-    this.addSVGmotion = this.addSVGmotion.bind(this)
+    // this.addSVGmotion = this.addSVGmotion.bind(this)
     this.splitTextToLines('.main-title')
     this.addListeners()
   }
 
-  addSVGmotion () {
+  addListeners () {
     const time = 1
-    const logoObject = this.logo.contentDocument
+    // const logoObject = this.logo.contentDocument
     /* Start onSiteLoad Effect */
-    const logoIcon = Array.from(logoObject.querySelectorAll('svg g > g > .st0'))
-    const logoText = logoObject.querySelector('.st1')
+    const logoIcon = Array.from(document.querySelectorAll('.main-navbar__logo g > g > .st0'))
+    const logoText = document.querySelector('.main-navbar__logo .st1')
     const lang = document.querySelector('.lang')
     const menuIconItems = Array.from(document.querySelectorAll('.menu-icon__item'))
     this.navBarAnimation = new TimelineLite()
@@ -81,7 +81,7 @@ export default class NavBarAnimation {
     })
   }
 
-  addListeners () {
-    this.logo.addEventListener('load', this.addSVGmotion)
-  }
+  // addListeners () {
+  //   this.logo.addEventListener('load', this.addSVGmotion)
+  // }
 }

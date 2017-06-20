@@ -11,6 +11,7 @@
   box-sizing: border-box;
   color: $c-text-dark;
   text-transform: uppercase;
+  max-width: 1280px;
 
   &__logo-wrapper {
     display: flex;
